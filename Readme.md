@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Надежда Веретёхина](https://up.htmlacademy.ru/htmlcss/19/user/155369).
-* Наставник: [Виктория Касаковская] (https://up.htmlacademy.ru/htmlcss/19/user/238370).
+* Наставник: [Виктория Касаковская](https://up.htmlacademy.ru/htmlcss/19/user/238370).
 
 ---
 
