@@ -10,7 +10,8 @@
           <a class="main-header-logo" href = "index.html">Device</a>
           <div class="navigation-buttons">
               <form class="search" action="https://echo.htmlacademy.ru" method="get">
-                  <input type="search">
+                  <input type="search" id="search" placeholder="Поиск по сайту">
+                  <label class="visually-hidden" for="search">Поиск по сайту</label>
               </form>
               <ul class="user-navigation">
                  <li class="login-name"><a href="personal-office.html">Валентин Петухов</a></li>
@@ -94,11 +95,11 @@
                         <legend>Bluetooth</legend>
                         <ul class="filter-bluetooth">
                             <li>
-                               <input type="radio" id="bluetooth-yes" name="bluetooth" checked>
+                               <input type="radio" id="bluetooth-yes" name="bluetooth" value="yes" checked>
                                <label for="bluetooth-yes">Есть</label>
                             </li>
                             <li>
-                               <input type="radio" id="bluetooth-no" name="bluetooth">
+                               <input type="radio" id="bluetooth-no" name="bluetooth" value="no">
                                <label for="bluetooth-no">Нет</label>
                             </li>
                         </ul>

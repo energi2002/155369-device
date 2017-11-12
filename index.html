@@ -10,7 +10,8 @@
           <a class="main-header-logo">Device</a>
           <div class="navigation-buttons">
               <form class="search" action="https://echo.htmlacademy.ru" method="get">
-                  <input type="search">
+                  <input type="search" id="search" placeholder="Поиск по сайту">
+                  <label class="visually-hidden" for="search">Поиск по сайту</label>
               </form>                      
               <ul class="user-navigation">
                  <li class="login-link"><a href="login.html">Войти</a></li>
@@ -50,6 +51,20 @@
        <!-- Основной слайдер -->
            <section class="main-slider">
                <h2 class="visually-hidden">Самые крутые гаджеты</h2>
+               <ul class="radiobutton">
+                   <li class="radiobutton-item">
+                       <input type="radio" id="radio-monopod" name="radio-slider" value="monopods" checked>
+                       <label class="visually-hidden" for="radio-monopod">Моноподы</label>
+                   </li>
+                   <li class="radiobutton-item">
+                       <input type="radio" id="radio-fitness" name="radio-slider" value="fitness-bangles">
+                       <label class="visually-hidden" for="radio-fitness">Фитнес-браслеты</label>
+                   </li>
+                   <li class="radiobutton-item">
+                       <input type="radio" id="radio-quadcopter" name="radio-slider" value="quadcopters">
+                       <label class="visually-hidden" for="radio-quadcopter">Квадрокоптеры</label>
+                   </li>
+               </ul>
                <ol class="main-slider-list">
                    <li class="main-slider-item">
                        <article>
@@ -59,20 +74,6 @@
                                <b>Делай селфи,<br>как Бен Стиллер!</b>
                                <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
                                <a class="button" href="#">Подробнее</a>
-                               <ul class="radiobuttons">
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-1" checked>
-                                      <label class="visually-hidden">Моноподы</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-1" >
-                                      <label class="visually-hidden">Фитнес-браслеты</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-1" >
-                                      <label class="visually-hidden">Квадрокоптеры</label>
-                                   </li>
-                               </ul>
                                <table>
                                   <tr>
                                      <th>8,5 м</th>
@@ -96,20 +97,6 @@
                                 <b>Худеем<br>правильно!</b>
                                 <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
                                 <a class="button" href="#">Подробнее</a>
-                                <ul class="radiobuttons">
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-2" >
-                                      <label class="visually-hidden">Моноподы</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-2" checked>
-                                      <label class="visually-hidden">Фитнес-браслеты</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-2" >
-                                      <label class="visually-hidden">Квадрокоптеры</label>
-                                   </li>
-                               </ul>
                                 <table>
                                     <tr>
                                         <th>48 часов</th>
@@ -129,20 +116,6 @@
                                 <b>Порхает как бабочка,<br>жалит как пчела!</b>
                                 <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
                                 <a class="button" href="#">Подробнее</a>
-                                <ul class="radiobuttons">
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-3">
-                                      <label class="visually-hidden">Моноподы</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-3" >
-                                      <label class="visually-hidden">Фитнес-браслеты</label>
-                                   </li>
-                                   <li class="radiobuttons-item">
-                                      <input type="radio" name="radio-slider-3" checked>
-                                      <label class="visually-hidden" >Квадрокоптеры</label>
-                                   </li>
-                               </ul>
                                 <table>
                                     <tr>
                                         <th>800 м</th>
