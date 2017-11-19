@@ -114,6 +114,7 @@ a {
     font-size: 15px;
     font-weight: 300;
     line-height: 36px;
+    letter-spacing: 0.15px;
     color: rgb(0, 0, 0);
     background-color: transparent;
     border: none;
@@ -124,35 +125,19 @@ a {
 }
 
 .search input::-webkit-input-placeholder {
-    font-family: "OpenSans", "Arial", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 0.15px;
     color: rgba(0, 0, 0, 0.3);
 }
 
 .search input:focus:-ms-input-placeholder {
-    font-family: "OpenSans", "Arial", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 0.15px;
     color: rgba(0, 0, 0, 0.3);
 }
 
 .search input:focus::-moz-placeholder {
-    font-family: "OpenSans", "Arial", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 0.15px;
-    color: rgba(0, 0, 0, 0.3);
+     color: rgba(0, 0, 0, 0.3);
 }
 
 .search input:focus:-moz-placeholder {
-    font-family: "OpenSans", "Arial", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 0.15px;
-    color: rgba(0, 0, 0, 0.3);
+     color: rgba(0, 0, 0, 0.3);
 }
 
 .search-btn {
@@ -166,7 +151,7 @@ a {
 }
 
 .search-btn:active {
-    color: rgb(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
     background-color: rgb(0, 0, 0);
 }
 
@@ -532,7 +517,7 @@ h1 {
     font-weight: 800;
     letter-spacing: 3.2px;
     text-transform: uppercase;
-    color: rgb(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .pagination-list .pagination-active {
