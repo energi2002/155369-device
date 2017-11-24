@@ -8,7 +8,8 @@
   </head>
   <body>
       <!-- HEADER START -->
-      <header class="main-header">
+      <div class="container">
+        <header class="main-header">
           <a class="main-header-logo">Device</a>
           <div class="user-navigation">
               <form class="search" action="https://echo.htmlacademy.ru" method="get">
@@ -45,10 +46,12 @@
                        <li><a href="quadcopters.hnml">Квадрокоптеры</a></li>
                   </ul>
               </div>
-          </nav>
-       </header>
+            </nav>
+          </header>
+        </div>
        <!-- MAIN START -->
        <main>
+          <div class="container">
            <h1 class="visually-hidden">Магазин гаджетов Device</h1>
        <!-- Основной слайдер -->
            <section class="slider">
@@ -133,53 +136,57 @@
                    </li>
                 </ol>
            </section>
+           
        <!-- Основной слайдер конец -->
        <!-- Каталог гаджетов -->
+           
            <section class="gadgets">
                <h2 class="visually-hidden">Каталог гаджетов</h2>
                <ul class="gadgets-list">
-                   <li>
+                   <li class="gadgets-item">
                        <a href="virtual-reality.html">
-                          <img src="img/popular-1.svg" width="97" height="55" alt="Виртуальная реальность">
+                          <div><img src="img/popular-1.svg" width="97" height="55" alt="Виртуальная реальность"></div>
                           <h3>Виртуальная реальность</h3>
                        </a>
                    </li>
-                   <li>
+                   <li class="gadgets-item">
                        <a href="selfi-monopods.html">
-                          <img src="img/popular-2.svg" width="86" height="117" alt="Моноподы для селфи">
-                          <h3>Моноподы для селфи</h3>
+                          <div><img src="img/popular-2.svg" width="86" height="117" alt="Моноподы для селфи"></div>
+                           <h3>Моноподы<br>для селфи</h3>
                        </a>
                    </li>
-                   <li>
+                   <li class="gadgets-item">
                        <a href="action-cams.html">
-                          <img src="img/popular-3.svg" width="71" height="87" alt="Экшн-камеры">
+                          <div><img src="img/popular-3.svg" width="71" height="87" alt="Экшн-камеры"></div>
                           <h3>Экшн-камеры</h3>
                        </a>
                    </li>
-                   <li>
+                   <li class="gadgets-item">
                        <a href="fitness-bangles.html">
-                          <img src="img/popular-4.svg" width="107" height="65" alt="Фитнес-браслеты">
+                          <div><img src="img/popular-4.svg" width="107" height="65" alt="Фитнес-браслеты"></div>
                           <h3>Фитнес-браслеты</h3>   
                        </a>
                    </li> 
-                   <li>
+                   <li class="gadgets-item">
                        <a href="smart-watch.html">
-                          <img src="img/popular-5.svg" width="56" height="98" alt="Умные часы">
+                          <div><img src="img/popular-5.svg" width="56" height="98" alt="Умные часы"></div>
                           <h3>Умные часы</h3>
                        </a>
                    </li>   
-                   <li>
+                   <li class="gadgets-item">
                        <a href="quadcopters.hnml">
-                          <img src="img/popular-6.svg" width="132" height="69" alt="Квадрокоптеры">
+                          <div><img src="img/popular-6.svg" width="132" height="69" alt="Квадрокоптеры"></div>
                           <h3>Квадрокоптеры</h3>
                        </a>
                    </li>
                </ul>
            </section>
+           </div>
        <!-- Каталог гаджетов конец-->
        <!-- Сервис-->
             <section class="service">
-               <div class="wrapper">
+               <div class="container">
+               <div class="service-wrapper">
                    <h2 class="visually-hidden">Услуги</h2>
                    <ul class="service-list">
                        <li class="service-radio">
@@ -209,10 +216,12 @@
                           <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
                       </div>
                    </div>
-               </div>
+                </div>
+                </div>
            </section>
        <!-- Сервис конец-->
        <!-- Логотипы -->
+           <div class="container">
            <section class="logotypes">
                <h2 class="visually-hidden">Логотипы компаний</h2>
                <ul class="logotypes-list">
@@ -230,6 +239,7 @@
                    </li>
                </ul>
            </section>
+           
        <!-- Логотипы конец -->
        <!-- О нас и контакты -->
            <div class="about-us-wrapper">
@@ -251,6 +261,7 @@
                     <a class="button" href="#">Напишите нам</a> 
                </section>
             </div>
+           </div>
        <!-- О нас и контакты конец -->
        <!--Модальные окна-->
            <section class="modal modal-message">
@@ -301,7 +312,7 @@
                 </ul>
              </div>
              <div class="footer-wrapper">
-                <div class="container">
+                <div class="footer-container">
                     <ul class="footer-user-navigation">
                         <li><a href="personal-office.html">Войти</a></li>
                         <li><a href="compare.html">Сравнить</a></li>
