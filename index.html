@@ -27,7 +27,7 @@
                         <ul class="compare-cart">
                             <li><a class="compare" href="compare.html">Сравнить</a></li>
                             <li><a class="cart" href="cart.html">Корзина</a></li>
-                        </ul>
+                       </ul>
                     </div>
                     <nav class="main-navigation">
                         <ul class="site-navigation">
@@ -44,8 +44,6 @@
                                         <li><a href="smart-watch.html">Умные часы</a></li>   
                                     </ul>
                                     <ul class="sec-nav-wrapper">     
-                                        <li><a href="quadcopters.hnml">Квадрокоптеры</a></li>
-                                        <li><a href="quadcopters.hnml">Квадрокоптеры</a></li>
                                         <li><a href="quadcopters.hnml">Квадрокоптеры</a></li>
                                     </ul>
                                 </div>
@@ -66,8 +64,8 @@
            <section class="slider">
             <h2 class="visually-hidden">Самые крутые гаджеты</h2>
                <input class="visually-hidden" type="radio" id="radio-monopod" name="radio-slider" value="monopods" checked>
-               <input class="visually-hidden" type="radio" id="radio-fitness" name="radio-slider" value="fitness-bangles">
-                <input class="visually-hidden" type="radio" id="radio-quadcopter" name="radio-slider" value="quadcopters">
+               <input class="visually-hidden" type="radio" id="radio-fitness" name="radio-slider" value="fitness-bangles" >
+               <input class="visually-hidden" type="radio" id="radio-quadcopter" name="radio-slider" value="quadcopters" >
                <ul class="slider-radiobuttons">
                    <li class="radio-slider">
                        <label for="radio-monopod">Моноподы</label>
@@ -197,7 +195,7 @@
                <div class="service-wrapper">
                    <h2 class="visually-hidden">Услуги</h2>
                    <input class="visually-hidden" type="radio" id="radio-delivery" name="service-radio" value="delivery" checked>
-                   <input class="visually-hidden" type="radio" id="radio-warranty" name="service-radio" value="warranty">
+                   <input class="visually-hidden" type="radio" id="radio-warranty" name="service-radio" value="warranty" >
                    <input class="visually-hidden" type="radio" id="radio-credit" name="service-radio" value="credit">
                    <ul class="service-list">
                        <li class="service-radio">
@@ -265,7 +263,7 @@
                     <h2>Контакты</h2>
                     <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
                     <a class="map" href="#"><img src="img/map.jpg" width="560" height="222" alt="Адрес офиса: ул. Строителей, 15"></a>
-                    <a class="button" href="#">Напишите нам</a> 
+                    <a class="button modal-message-btn" href="#"><span class="modal-show"></span>Напишите нам</a> 
                </section>
             </div>
            </div>
@@ -287,16 +285,16 @@
                    </div>
                    <div class="textarea-wrapper">
                      <label for="message-text">Текст письма:</label><br>
-                      <textarea id="message-text" name="message-text" rows="6" cols="60" placeholder="В свободной форме" required></textarea>
+                      <textarea id="message-text" name="message-text" rows="6" cols="60" placeholder="В свободной форме"></textarea>
                    </div>
                      <button class="button" type="submit" value="Отправить">Отправить</button>
                </form>
                <button class="modal-close" type="button">Закрыть</button>
            </section>
-           
-      <section class="modal modal-map">
+           <section class="modal modal-map">
                <h2 class="visually-hidden">Как до нас добраться</h2>
-               <img src="img/map-big.jpg" width="960" height="559" alt="Адрес офиса: г.Москва, ул. Строителей, 15">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488779976!2d37.52742931592807!3d55.687030980535816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1512135572120" width="960" height="559" frameborder="0" style="border:0" allowfullscreen></iframe>
+               <p><img src="img/map-big.jpg" width="960" height="559" alt="Адрес офиса: г.Москва, ул. Строителей, 15"></p>
                <button class="modal-close" type="button">Закрыть</button>
            </section>
        </main>
@@ -349,6 +347,90 @@
                </div>
            </div>
         </footer>
+        <script>
+            
+            var modalMessage = document.querySelector(".modal-message-btn");
+            var popup = document.querySelector(".modal-message");
+            var close = popup.querySelector(".modal-close");
+            var form = popup.querySelector("form");
+            var nameMessage = popup.querySelector("[name=message-name]");
+            var email = popup.querySelector("[name=message-email]");
+            var text = popup.querySelector("[name=message-text]");
+            
+            var storageName = localStorage.getItem("nameMessage");
+            var storageEmail = localStorage.getItem("email");
+            
+            
+                       
+            modalMessage.addEventListener("click", function (evt) {
+                evt.preventDefault();
+                popup.classList.add("modal-show");
+                nameMessage.focus();
+                
+                if (storageName) {
+                    nameMessage.value = storageName;
+                    email.focus();
+                } else {
+                    nameMessage.focus();
+                }
+                
+                if (storageEmail) {
+                    email.value = storageEmail;
+                    text.focus();
+                } else {
+                    email.focus();
+                }
+            });
+            
+            close.addEventListener("click", function (evt) {
+                evt.preventDefault();
+                popup.classList.remove("modal-show");
+                popup.classList.remove("modal-error");
+            });
+            
+            window.addEventListener("keydown", function (evt) {
+                if (evt.keyCode === 27) {
+                    if (popup.classList.contains("modal-show")) {
+                        popup.classList.remove("modal-show");
+                        popup.classList.remove("modal-error");
+                   }
+                }
+            });
+            
+             form.addEventListener("submit", function (evt) {
+               if (!nameMessage.value || !email.value || !text.value) {
+                   evt.preventDefault();
+                   popup.classList.remove("modal-error");
+                   popup.offsetWidth = popup.offsetWidth;
+                   popup.classList.add("modal-error");
+               }  else {
+                  localStorage.setItem("nameMessage", nameMessage.value);
+                  localStorage.setItem("email", email.value);
+                 }
+             });
+            
+            var mapLink = document.querySelector(".map");
+            var mapPopup = document.querySelector(".modal-map");
+            var mapClose = mapPopup.querySelector(".modal-close");
+            
+            mapLink.addEventListener("click", function (evt) {
+                evt.preventDefault();
+                mapPopup.classList.add("modal-show");
+            });
+            
+            mapClose.addEventListener("click", function (evt) {
+                evt.preventDefault();
+                mapPopup.classList.remove("modal-show");
+            });
+            
+              window.addEventListener("keydown", function (evt) {
+                if (evt.keyCode === 27) {
+                    if (mapPopup.classList.contains("modal-show")) {
+                        mapPopup.classList.remove("modal-show");
+                    }
+                }
+            });
+           
+         </script>
     </body>
 </html>
-

@@ -59,6 +59,10 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    outline: 1px dotted rgb(0, 0, 0);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -102,10 +106,17 @@ img {
     z-index: -1;
 }
 
-.button:hover::before {
+.button:hover::before,
+.button:focus::before {
     height: 100%;
     top: 0;
  }
+
+.button:active,
+.button:focus,
+.button[type="submit"]:focus {
+    outline: none;
+}
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -170,7 +181,7 @@ input[type="radio"].visually-hidden {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-        
+          
     width: 1040px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -198,7 +209,7 @@ input[type="radio"].visually-hidden {
     flex-direction: row;
     width: 440px;
     margin: 0;
-    margin-right: 112px;
+    margin-right: 95px;
     padding: 0;
 }
 
@@ -232,16 +243,26 @@ input[type="radio"].visually-hidden {
 }
 
 .search-btn {
+    padding: 0 20px;
+    
     color: transparent;
     background-color: transparent;
     border: none;
 }
 
-.search input[type="search"]:focus + .search-btn {
+.search input[type="search"]:focus,
+.search-btn:active,
+.search-btn:focus {
+     outline: none;
+}
+
+.search input[type="search"]:focus + .search-btn  {
     font: inherit;
     
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
+    
+    outline: none;
 }
 
 .search input[type="search"]:focus + .search-btn:hover {
@@ -249,7 +270,7 @@ input[type="radio"].visually-hidden {
     background-color: rgb(0, 0, 0);
 }
 
-.search input[type="search"]:focus + .search-btn:active {
+.search input[type="search"]:focus + .search-btn:active, .search-btn:focus {
     color: rgba(255, 255, 255, 0.3);
     background-color: rgb(0, 0, 0);
 } 
@@ -326,13 +347,12 @@ input[type="radio"].visually-hidden {
 
                                          /* login compare cart */
 .login-navigation {
-    position: relative;
-    
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
     
-    width: 260px;
+    max-width: 260px;
     margin: 0;
     padding: 0;
     
@@ -340,6 +360,8 @@ input[type="radio"].visually-hidden {
 }
 
 .login-navigation .login {
+    position: relative;
+        
     padding-left: 31px;
 }
 
@@ -348,7 +370,7 @@ input[type="radio"].visually-hidden {
     
     position:absolute;
     left: 5px;
-    bottom: 12px;
+    top: 5px;
     
     width: 13px;
     height: 12px;
@@ -384,24 +406,32 @@ input[type="radio"].visually-hidden {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
+    flex-wrap: wrap;
+    
     width: 260px;
     margin: 0;
     margin-left: auto;
-    padding: 0;
+    padding-left: 0;
     
     list-style: none;
 }
 
 .compare-cart a {
-    padding-left: 63px;
+    position: relative;
+    
+    padding-left: 22px;
+}
+
+.compare-cart li:not(:last-child) {
+    margin-right: 40px;
 }
 
 .compare-cart .compare::before {
     content: "";
     
     position: absolute;
-    left: 42px;
-    bottom: 12px;
+    left: 0;
+    top: 6px;
     
     width: 10px;
     height: 10px;
@@ -415,8 +445,8 @@ input[type="radio"].visually-hidden {
     content: "";
     
     position: absolute;
-    right: 70px;
-    bottom: 12px;
+    left: 0;
+    top: 4px;
     
     width: 12px;
     height: 12px;
@@ -456,11 +486,17 @@ input[type="radio"].visually-hidden {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    width: 1044px;
+    flex-wrap: wrap;
+    
+    max-width: 1060px;
     margin: 0 auto;
     padding: 0;
-    padding-left: 3px;
 }
+
+.site-navigation li {
+    padding: 0 10px;
+}
+
 
 .site-navigation .catalog-nav-item {
     position: relative;
@@ -487,7 +523,7 @@ input[type="radio"].visually-hidden {
 
 .site-navigation .catalog-nav:nth-of-type(2),
 .site-navigation .catalog-nav:nth-of-type(3) {
-    padding-left: 35px;
+    padding-left: 25px;
 }
 
 .site-navigation .catalog-nav:last-of-type {
@@ -500,8 +536,8 @@ input[type="radio"].visually-hidden {
 
 .catalog-nav:hover .second-navigation  {
     position: absolute;
-    top: 25px; 
-    left: -56px;
+    top: 23px; 
+    left: -50px;
     
     display: flex;
     align-items: flex-start;
@@ -580,6 +616,8 @@ main {
 .slider-radiobuttons label {
     position: relative;
     font-size: 0;
+    
+    cursor: pointer;
 }
 
 .slider-radiobuttons label::before {
@@ -593,8 +631,16 @@ main {
     height: 12px;
     
     background-image: url("../img/slider-button-empty.svg");
-    
-    cursor: pointer;
+}
+
+.slider-radiobuttons label:focus {
+    outline: 1px dotted rgb(0, 0, 0);
+}
+
+#radio-monopod[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-monopod"]::before,
+#radio-fitness[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-fitness"]::before,
+#radio-quadcopter[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-quadcopter"]::before {
+    outline: 1px dotted rgb(0, 0, 0);
 }
 
 #radio-monopod[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-monopod"]::before,
@@ -789,6 +835,7 @@ main {
 .gadgets-item div {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
     width: 160px;
     height: 160px;
@@ -807,8 +854,8 @@ main {
     background-color :rgb(240, 197, 46);
 }
 
-.gadgets-item div:active {
-    background-color: rgb(240, 197, 46);
+.gadgets-item div:active,
+.gadgets a:active div {
     opacity:0.3;
 }
 
@@ -824,7 +871,7 @@ main {
     letter-spacing: 0.18px;
 }
 
-.gadgets a,
+.gadgets a, 
 .gadgets a:hover {
     font-family: "Gilroy", "Arial", sans-serif;
     font-size: 18px;
@@ -834,9 +881,14 @@ main {
     color: rgb(0, 0, 0);
 } 
 
+.gadgets a:hover div {
+    background-color :rgb(240, 197, 46);
+}
+
 .gadgets a:active {
     color: rgba(0, 0, 0, 0.3);
 }
+
 
                                                 /* service */
 
@@ -876,6 +928,12 @@ main {
 
 .service-list li:nth-of-type(2) {
     margin-bottom: 29px;
+}
+
+#radio-delivery:focus ~ .service-list label[for="radio-delivery"]::before,
+#radio-warranty:focus~ .service-list label[for="radio-warranty"]::before,
+#radio-credit:focus ~ .service-list label[for="radio-credit"]::before {
+     outline: 1px dotted rgb(0, 0, 0);
 }
 
 #radio-delivery:checked ~ .service-list label[for="radio-delivery"]::before,
@@ -980,6 +1038,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
     
     margin: 0;
@@ -1093,13 +1152,63 @@ main {
     
                                             /* modal */ 
 
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .modal {
     position: fixed;
     display: none;
-        
+            
     background-color: rgb(255, 255, 255);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
     z-index: 10;
+}
+
+.modal-show {
+   display: inline-block;
+    
+   animation: bounce 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-close {
@@ -1117,6 +1226,8 @@ main {
     border: none;
     border-radius: 50%;
     opacity: 0.5;
+    
+    z-index: 3;
 }
 
 .modal-close:hover {
@@ -1127,6 +1238,12 @@ main {
 .modal-close:active {
     opacity: 0.3;
     cursor: pointer;
+    
+    outline: none;
+}
+
+.modal-close:focus {
+    outline: 1px dotted rgb(0, 0, 0);
 }
 
 .modal-map {
@@ -1136,6 +1253,23 @@ main {
     width: 960px;
     height: 559px; 
     margin-left: -480px;
+}
+
+.modal-map p {
+   position: absolute;
+   top: 0;
+   left: 0;
+  
+   margin: 0;
+    
+   z-index: 1;
+}
+
+.modal-map iframe {
+  position: relative;
+  z-index: 2;
+
+  border: none;
 }
 
 .modal-message {
@@ -1162,6 +1296,11 @@ main {
     height: 50px;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+.modal-message input:focus,
+.modal-message textarea:focus {
+    outline: none;
 }
 
 .modal-message textarea {
@@ -1209,8 +1348,11 @@ input:invalid {
 .modal-message .button {
     background-color: transparent;
     border: none;
+        
     cursor: pointer;
 }
+
+
 
                                             /* INNER PAGE */
                                            /* breadcrumbs */
@@ -1374,7 +1516,8 @@ h1 {
 }
 
 .sort-list .sort-item:active,
-.sort-list .sort-active {
+.sort-list .sort-active, 
+.sort-list .sort-active:hover {
     color: rgb(0, 0, 0);
 }
 
@@ -1415,6 +1558,11 @@ h1 {
     background-position: center;
     
     opacity: 0.2;
+}
+
+.sort-list-arrows .arrow-active,
+.sort-list-arrows .arrow-active:hover {
+    opacity: 1;
 }
 
 
@@ -1548,6 +1696,10 @@ h1 {
    cursor: pointer;
 }
 
+.range-controls .toggle:focus {
+    outline: 1px dotted rgb(0, 0, 0);
+}
+
 .price-controls span {
     font-family: "Gilroy", "Arial", sans-serif;
     font-size: 14px;
@@ -1569,9 +1721,12 @@ h1 {
     left: 107px;
 }
 
-.color-checkbox label {
+.color-checkbox label,
+.radio-bluetooth label {
    position: relative;
    padding-left: 40px;
+    
+    cursor: pointer;
 }
 
 .color-checkbox label::before {
@@ -1592,17 +1747,17 @@ h1 {
 }
 
 .color-checkbox input[type="checkbox"]:checked + label::before {
+   width: 25px;
    background-image: url("../img/checkbox-on.svg");
+}
+
+.color-checkbox input[type="checkbox"]:focus + label::before {
+    outline: 1px dotted rgb(0, 0, 0);
 }
 
 .color-checkbox input[type="checkbox"]:disabled + label::before {
    opacity: 0.25;
-   color: rgba (0, 0, 0, 0.25);
-}
-
-.radio-bluetooth label {
-   position: relative;
-   padding-left: 40px;
+   color: rgba(0, 0, 0, 0.25);
 }
 
 .radio-bluetooth label::before {
@@ -1626,6 +1781,10 @@ h1 {
    background-image: url("../img/radio-on.svg");
 }
 
+.radio-bluetooth input[type="radio"]:focus + label::before {
+   outline: 1px dotted rgb(0, 0, 0);
+}
+
 .radio-bluetooth input[type="radio"]:disabled + label::before {
    opacity: 0.25;
    color: rgba (0, 0, 0, 0.25);
@@ -1638,6 +1797,7 @@ h1 {
 .filter-wrapper-btn .button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -1960,6 +2120,10 @@ h1 {
    opacity: 0.3;
 }
 
+.social-button:focus {
+    outline: 1px dotted rgb(255, 255, 255);
+}
+
 .social-button:hover {
    opacity: 0.6;
 }
@@ -2070,3 +2234,6 @@ h1 {
     opacity: 0.3;
 }
 
+.logo-html-academy:focus{
+    outline: 1px dotted rgb(255, 255, 255);
+}

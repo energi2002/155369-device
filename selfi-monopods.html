@@ -22,9 +22,7 @@
                             <button class="search-btn" type="submit">Найти</button>
                         </form> 
                         <ul class="login-navigation">
-                            <li class="login">
-                                <a href="personal-office.html">Валентин Петухов</a>
-                            </li>
+                            <li><a class="login" href="profile.html">Валентин Петухов</a></li>
                             <li class="logout">
                                 <a href="login.html">Выйти</a>
                             </li>
@@ -84,13 +82,13 @@
                     <div class="wrapper-sorting">
                         <p>Сортировка:</p>
                         <ul class="sort-list">
-                            <li><a class="sort-item sort-active" href="#">По цене</a></li>
+                            <li><a class="sort-item sort-active">По цене</a></li>
                             <li><a class="sort-item" href="#">По типу</a></li>
                             <li><a class="sort-item" href="#">По популярности</a></li>
                         </ul>
                         <ul class="sort-list-arrows">
                             <li><a class="arrow arrow-up" href="#"><span class="visually-hidden">Стрелка вверх</span></a></li>
-                            <li><a class="arrow arrow-down" href="#"><span class="visually-hidden">Стрелка вниз</span></a></li>
+                            <li><a class="arrow arrow-down arrow-active"><span class="visually-hidden">Стрелка вниз</span></a></li>
                         </ul>
                     </div>    
                 </div>      
@@ -108,8 +106,8 @@
                                             <div class="scale">
                                                 <div class="bar"></div>
                                             </div>
-                                            <div class="toggle toggle-min"></div>
-                                            <div class="toggle toggle-max"></div>
+                                            <div class="toggle toggle-min" tabindex="0"></div>
+                                            <div class="toggle toggle-max" tabindex="0"></div>
                                         </div>
                                         <div class="price-controls">
                                             <span>от 0</span>
@@ -122,10 +120,10 @@
                                 <fieldset>
                                     <legend>Цвет</legend>
                                     <ul>
-                                        <li class="color-checkbox" >
+                                        <li class="color-checkbox">
                                             <input class="visually-hidden" type="checkbox" id="color-black" name="color-black" checked>
                                             <label for="color-black">Чёрный</label>
-                                        </li>
+                                        </li>   
                                         <li class="color-checkbox">
                                             <input class="visually-hidden" type="checkbox" id="color-white" name="color-white">
                                             <label for="color-white">Белый</label>
@@ -215,6 +213,38 @@
                                         </div>
                                     </article>
                                 </li>
+                                <li class="catalog-item">
+                                    <article>
+                                        <div class="catalog-img-wrapper">
+                                            <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка Следуй за мной">
+                                            <img class="logo-new" src="img/logo-new.png" width="60" height="61" alt="Новинка">
+                                            <div class="catalog-hover">
+                                                <a class="button" href="#">В корзину</a>
+                                                <a class="add-compare" href ="#">Добавить к сравнению</a>
+                                            </div>
+                                        </div>
+                                        <div class="catalog-item-title">
+                                            <a href="#"><h3>Селфи-палка "Следуй за <br>мной"</h3></a>
+                                            <span class="price">4 900 руб.</span>
+                                        </div>
+                                    </article>
+                               </li>
+                                <li class="catalog-item">
+                                    <article>
+                                        <div class="catalog-img-wrapper">
+                                            <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка Следуй за мной">
+                                            <img class="logo-new" src="img/logo-new.png" width="60" height="61" alt="Новинка">
+                                            <div class="catalog-hover">
+                                                <a class="button" href="#">В корзину</a>
+                                                <a class="add-compare" href ="#">Добавить к сравнению</a>
+                                            </div>
+                                        </div>
+                                        <div class="catalog-item-title">
+                                            <a href="#"><h3>Селфи-палка "Следуй за <br>мной"</h3></a>
+                                            <span class="price">4 900 руб.</span>
+                                        </div>
+                                    </article>
+                               </li>
                                 <li class="catalog-item">
                                     <article>
                                         <div class="catalog-img-wrapper">
