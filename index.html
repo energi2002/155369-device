@@ -293,7 +293,7 @@
            </section>
            <section class="modal modal-map">
                <h2 class="visually-hidden">Как до нас добраться</h2>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488779976!2d37.52742931592807!3d55.687030980535816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1512135572120" width="960" height="559" frameborder="0" style="border:0" allowfullscreen></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488779976!2d37.52742931592807!3d55.687030980535816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1512135572120" width="960" height="559" allowfullscreen></iframe>
                <p><img src="img/map-big.jpg" width="960" height="559" alt="Адрес офиса: г.Москва, ул. Строителей, 15"></p>
                <button class="modal-close" type="button">Закрыть</button>
            </section>
@@ -347,90 +347,6 @@
                </div>
            </div>
         </footer>
-        <script>
-            
-            var modalMessage = document.querySelector(".modal-message-btn");
-            var popup = document.querySelector(".modal-message");
-            var close = popup.querySelector(".modal-close");
-            var form = popup.querySelector("form");
-            var nameMessage = popup.querySelector("[name=message-name]");
-            var email = popup.querySelector("[name=message-email]");
-            var text = popup.querySelector("[name=message-text]");
-            
-            var storageName = localStorage.getItem("nameMessage");
-            var storageEmail = localStorage.getItem("email");
-            
-            
-                       
-            modalMessage.addEventListener("click", function (evt) {
-                evt.preventDefault();
-                popup.classList.add("modal-show");
-                nameMessage.focus();
-                
-                if (storageName) {
-                    nameMessage.value = storageName;
-                    email.focus();
-                } else {
-                    nameMessage.focus();
-                }
-                
-                if (storageEmail) {
-                    email.value = storageEmail;
-                    text.focus();
-                } else {
-                    email.focus();
-                }
-            });
-            
-            close.addEventListener("click", function (evt) {
-                evt.preventDefault();
-                popup.classList.remove("modal-show");
-                popup.classList.remove("modal-error");
-            });
-            
-            window.addEventListener("keydown", function (evt) {
-                if (evt.keyCode === 27) {
-                    if (popup.classList.contains("modal-show")) {
-                        popup.classList.remove("modal-show");
-                        popup.classList.remove("modal-error");
-                   }
-                }
-            });
-            
-             form.addEventListener("submit", function (evt) {
-               if (!nameMessage.value || !email.value || !text.value) {
-                   evt.preventDefault();
-                   popup.classList.remove("modal-error");
-                   popup.offsetWidth = popup.offsetWidth;
-                   popup.classList.add("modal-error");
-               }  else {
-                  localStorage.setItem("nameMessage", nameMessage.value);
-                  localStorage.setItem("email", email.value);
-                 }
-             });
-            
-            var mapLink = document.querySelector(".map");
-            var mapPopup = document.querySelector(".modal-map");
-            var mapClose = mapPopup.querySelector(".modal-close");
-            
-            mapLink.addEventListener("click", function (evt) {
-                evt.preventDefault();
-                mapPopup.classList.add("modal-show");
-            });
-            
-            mapClose.addEventListener("click", function (evt) {
-                evt.preventDefault();
-                mapPopup.classList.remove("modal-show");
-            });
-            
-              window.addEventListener("keydown", function (evt) {
-                if (evt.keyCode === 27) {
-                    if (mapPopup.classList.contains("modal-show")) {
-                        mapPopup.classList.remove("modal-show");
-                    }
-                }
-            });
-           
-         </script>
+        <script src="js/script.js"></script>
     </body>
 </html>
