@@ -4,9 +4,8 @@
         <meta charset="utf-8">
         <title>Device</title>
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.min.css">
     </head>
-    
     <body>
                                     <!-- HEADER START -->
         <header class="main-header">
@@ -56,37 +55,30 @@
                 </div>
             </div>
         </header>
-        
-                                           <!-- MAIN START -->
+                                              <!-- MAIN START -->
        <main>
           <div class="container">
            <h1 class="visually-hidden">Магазин гаджетов Device</h1>
            <section class="slider">
             <h2 class="visually-hidden">Самые крутые гаджеты</h2>
-               <input class="visually-hidden" type="radio" id="radio-monopod" name="radio-slider" value="monopods" checked>
-               <input class="visually-hidden" type="radio" id="radio-fitness" name="radio-slider" value="fitness-bangles" >
-               <input class="visually-hidden" type="radio" id="radio-quadcopter" name="radio-slider" value="quadcopters" >
+               <input class="radio-monopod visually-hidden" type="radio" id="radio-monopod" name="radio-slider" value="monopods" checked>
+               <input class="radio-fitness visually-hidden" type="radio" id="radio-fitness" name="radio-slider" value="fitness-bangles" >
+               <input class="radio-quadcopter visually-hidden" type="radio" id="radio-quadcopter" name="radio-slider" value="quadcopters" >
                <ul class="slider-radiobuttons">
-                   <li class="radio-slider">
-                       <label for="radio-monopod">Моноподы</label>
-                   </li>
-                   <li class="radio-slider">
-                       <label for="radio-fitness">Фитнес-браслеты</label>
-                   </li>
-                   <li class="radio-slider">
-                       <label for="radio-quadcopter">Квадрокоптеры</label>
-                   </li>
+                   <li class="radio-slider"><label for="radio-monopod">Моноподы</label></li>
+                   <li class="radio-slider"><label for="radio-fitness">Фитнес-браслеты</label></li>
+                   <li class="radio-slider"><label for="radio-quadcopter">Квадрокоптеры</label></li>
                </ul> 
                <ol class="slider-list">
                     <li class="slider-item">
                       <article class="slider-monopods">
-                           <h3 class="visually-hidden">Моноподы</h3>
-                             <img src="img/slider-1.png" width="384" height="486" alt="Моноподы для селфи">
-                           <div class="slider-item-wrapper">
-                               <b>Делай селфи,<br>как Бен Стиллер!</b>
-                               <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-                               <a class="button" href="#">Подробнее</a>
-                               <table class="slider-table slider-table-monopods">
+                          <h3 class="visually-hidden">Моноподы</h3>
+                          <img src="img/slider-1.png" width="384" height="486" alt="Моноподы для селфи">
+                          <div class="slider-item-wrapper">
+                              <b>Делай селфи,<br>как Бен Стиллер!</b>
+                              <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+                              <a class="button" href="#">Подробнее</a>
+                              <table class="slider-table slider-table-monopods">
                                   <tr>
                                       <th>8,5 м</th>
                                       <th>5 кг</th>
@@ -103,9 +95,9 @@
                    </li> 
                    <li class="slider-item">
                        <article class="slider-bangles">
-                            <h3 class="visually-hidden">Фитнес-браслет</h3>
-                            <img src="img/slider-2.png" width="345" height="485" alt="Фитнес-браслет">
-                            <div class="slider-item-wrapper">
+                           <h3 class="visually-hidden">Фитнес-браслет</h3>
+                           <img src="img/slider-2.png" width="345" height="485" alt="Фитнес-браслет">
+                           <div class="slider-item-wrapper">
                                 <b>Худеем<br>правильно!</b>
                                 <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
                                 <a class="button slider-button" href="#">Подробнее</a>
@@ -122,9 +114,9 @@
                    </li> 
                     <li class="slider-item">
                        <article class="slider-quadcopters">
-                            <h3 class="visually-hidden">Квадрокоптер</h3>
-                            <img src="img/slider-3.png" width="526" height="334" alt="Квадрокоптеры">
-                            <div class="slider-item-wrapper">
+                           <h3 class="visually-hidden">Квадрокоптер</h3>
+                           <img src="img/slider-3.png" width="526" height="334" alt="Квадрокоптеры">
+                           <div class="slider-item-wrapper">
                                 <b>Порхает как бабочка,<br>жалит как пчела!</b>
                                 <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
                                 <a class="button slider-button" href="#">Подробнее</a>
@@ -184,7 +176,6 @@
                           <h3>Квадрокоптеры</h3>
                        </a>
                    </li>
-                   
                </ul>
            </section>
            </div>
@@ -194,9 +185,9 @@
                <div class="container"> 
                <div class="service-wrapper">
                    <h2 class="visually-hidden">Услуги</h2>
-                   <input class="visually-hidden" type="radio" id="radio-delivery" name="service-radio" value="delivery" checked>
-                   <input class="visually-hidden" type="radio" id="radio-warranty" name="service-radio" value="warranty" >
-                   <input class="visually-hidden" type="radio" id="radio-credit" name="service-radio" value="credit">
+                   <input class="radio-delivery visually-hidden" type="radio" id="radio-delivery" name="service-radio" value="delivery" checked>
+                   <input class="radio-warranty visually-hidden" type="radio" id="radio-warranty" name="service-radio" value="warranty" >
+                   <input class="radio-credit visually-hidden" type="radio" id="radio-credit" name="service-radio" value="credit">
                    <ul class="service-list">
                        <li class="service-radio">
                            <label class="button" for="radio-delivery">Доставка</label>
@@ -232,16 +223,24 @@
                <h2 class="visually-hidden">Логотипы компаний</h2>
                <ul class="logotypes-list">
                    <li class="logotypes-item">
-                       <a href="#"><img src="img/logo-1.jpg" width="260" height="100" alt="Логотип DJI"></a>
+                       <a href="#">
+                           <img src="img/logo-1.jpg" width="260" height="100" alt="Логотип DJI">
+                       </a>
                    </li> 
                    <li>
-                       <a href="#"><img src="img/logo-2.jpg" width="260" height="100" alt="Логотип spgadgets"></a>
+                       <a href="#">
+                           <img src="img/logo-2.jpg" width="260" height="100" alt="Логотип spgadgets">
+                       </a>
                    </li>
                    <li>
-                       <a href="#"><img src="img/logo-3.jpg" width="260" height="100" alt="Логотип GpPro"></a>
+                       <a href="#">
+                           <img src="img/logo-3.jpg" width="260" height="100" alt="Логотип GpPro">
+                       </a>
                    </li>
                    <li>
-                       <a href="#"><img src="img/logo-4.jpg" width="260" height="100" alt="Логотип vive"></a>
+                       <a href="#">
+                           <img src="img/logo-4.jpg" width="260" height="100" alt="Логотип vive">
+                       </a>
                    </li>
                </ul>
            </section>
@@ -263,13 +262,12 @@
                     <h2>Контакты</h2>
                     <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
                     <a class="map" href="#"><img src="img/map.jpg" width="560" height="222" alt="Адрес офиса: ул. Строителей, 15"></a>
-                    <a class="button modal-message-btn" href="#"><span class="modal-show"></span>Напишите нам</a> 
+                    <a class="button modal-message-btn" href="write-us.html"><span class="modal-show"></span>Напишите нам</a> 
                </section>
             </div>
            </div>
                                            <!--Модальные окна-->
-           
-           
+  
         <section class="modal modal-message">
                <h2 class="visually-hidden">Напишите нам</h2>
                <form class="message" action="https://echo.htmlacademy.ru" method="post">
@@ -340,13 +338,13 @@
                            <li><a class="cart-footer" href="cart.html">Корзина</a></li>
                        </ul>
                        <div class="contacts">
-                           <a class="phone-number" href="+74954959595">Тел.: +7(495) 495-95-95</a>
+                           <a class="phone-number" href="+74954959595">Тел.: +7 (495) 495-95-95</a>
                            <a class="logo-html-academy" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy"></a>
                        </div>
                    </div>
                </div>
            </div>
         </footer>
-        <script src="js/script.js"></script>
+        <script src="js/scripts.min.js"></script>
     </body>
 </html>

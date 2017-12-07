@@ -59,9 +59,9 @@ a {
     text-decoration: none;
 }
 
-/*a:focus {
+a:focus {
     outline: 1px dotted rgb(0, 0, 0);
-} */
+} 
 
 img {
   max-width: 100%;
@@ -71,7 +71,9 @@ img {
 .button, 
 .button:hover {
     position: relative;
+    
     display: inline-block;
+    vertical-align: top;
     
     padding: 10px 43px;
     
@@ -83,6 +85,7 @@ img {
     text-transform: uppercase;
     text-align: center;
     color: rgb(0, 0, 0);
+    
     opacity: 0.99;
 }
 
@@ -108,8 +111,8 @@ img {
 
 .button:hover::before,
 .button:focus::before {
-    height: 100%;
     top: 0;
+    height: 100%;
  }
 
 .button:active,
@@ -140,8 +143,6 @@ input[type="radio"].visually-hidden {
     width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
-    
-  /*outline: 1px solid purple;*/
 }
 
                                               /* HEADER */
@@ -154,6 +155,7 @@ input[type="radio"].visually-hidden {
 
 .main-header-wrapper {
     min-height: 184px;
+    
     background-color: rgb(247, 226, 150);
 }
 
@@ -247,6 +249,7 @@ input[type="radio"].visually-hidden {
     width: 85px;
         
     color: transparent;
+    
     background-color: transparent;
     border: none;
 }
@@ -261,20 +264,21 @@ input[type="radio"].visually-hidden {
     font: inherit;
     
     color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
     
+    border: 2px solid rgb(0, 0, 0);
     outline: none;
 }
 
 .search input[type="search"]:focus + .search-btn:hover {
     color: rgb(255, 255, 255);
+    
     background-color: rgb(0, 0, 0);
 }
 
 .search input[type="search"]:focus + .search-btn:active, .search-btn:focus {
     font: inherit;
-    
     color: rgba(255, 255, 255, 0.3);
+    
     background-color: rgb(0, 0, 0);
 } 
 
@@ -500,7 +504,6 @@ input[type="radio"].visually-hidden {
     padding: 0 10px;
 }
 
-
 .site-navigation .catalog-nav-item {
     position: relative;
     padding-right: 40px;
@@ -599,8 +602,8 @@ main {
                                        /* slider radiobuttons */
 .slider-radiobuttons {
     position: absolute;
-    bottom: 156px;
-    right: 82px;
+    bottom: 155px;
+    right: 80px;
     
     display: flex;
     justify-content: flex-start;
@@ -640,15 +643,15 @@ main {
     outline: 1px dotted rgb(0, 0, 0);
 }
 
-#radio-monopod[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-monopod"]::before,
-#radio-fitness[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-fitness"]::before,
-#radio-quadcopter[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-quadcopter"]::before {
+.radio-monopod[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-monopod"]::before,
+.radio-fitness[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-fitness"]::before,
+.radio-quadcopter[type="radio"]:focus ~ .slider-radiobuttons label[for="radio-quadcopter"]::before {
     outline: 1px dotted rgb(0, 0, 0);
 }
 
-#radio-monopod[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-monopod"]::before,
-#radio-fitness[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-fitness"]::before,
-#radio-quadcopter[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-quadcopter"]::before {
+.radio-monopod[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-monopod"]::before,
+.radio-fitness[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-fitness"]::before,
+.radio-quadcopter[type="radio"]:checked ~ .slider-radiobuttons label[for="radio-quadcopter"]::before {
     background-image: url("../img/slider-button.svg");
 }
 
@@ -658,18 +661,18 @@ main {
     display: none;
 }
 
-#radio-monopod[type="radio"]:checked ~ .slider-list .slider-monopods,
-#radio-fitness[type="radio"]:checked ~ .slider-list .slider-bangles,
-#radio-quadcopter[type="radio"]:checked ~ .slider-list .slider-quadcopters {
+.radio-monopod[type="radio"]:checked ~ .slider-list .slider-monopods,
+.radio-fitness[type="radio"]:checked ~ .slider-list .slider-bangles,
+.radio-quadcopter[type="radio"]:checked ~ .slider-list .slider-quadcopters {
     display: flex;
 }
-
 
 
                                             /* big slider */
 
 .slider {
     position: relative;
+    
     min-height: 500px;
     margin-bottom: 95px;
 }
@@ -709,7 +712,7 @@ main {
 
 .slider-item-wrapper a {
     max-width: 300px;
-    margin-bottom: 54px;
+    margin-bottom: 53px;
 }
 
 .slider-monopods {
@@ -818,7 +821,6 @@ main {
 }
 
                                               /* gadgets */
-
 .gadgets {
     margin-bottom: 89px;
 }
@@ -850,6 +852,7 @@ main {
 
 .gadgets-item:nth-of-type(2) div {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
     flex-direction: row;
 }
@@ -861,6 +864,7 @@ main {
 .gadgets-item div:active,
 .gadgets a:active div {
     opacity:0.3;
+
 }
 
 .gadgets h3 {
@@ -883,16 +887,18 @@ main {
     line-height: 21.6px;
     letter-spacing: 0.18px;
     color: rgb(0, 0, 0);
+    
+    outline: none;
 } 
 
-.gadgets a:hover div {
+.gadgets a:hover div, 
+.gadgets a:focus div {
     background-color :rgb(240, 197, 46);
-}
+  }
 
 .gadgets a:active {
     color: rgba(0, 0, 0, 0.3);
 }
-
 
                                                 /* service */
 
@@ -934,15 +940,15 @@ main {
     margin-bottom: 29px;
 }
 
-#radio-delivery:focus ~ .service-list label[for="radio-delivery"]::before,
-#radio-warranty:focus~ .service-list label[for="radio-warranty"]::before,
-#radio-credit:focus ~ .service-list label[for="radio-credit"]::before {
+.radio-delivery:focus ~ .service-list label[for="radio-delivery"]::before,
+.radio-warranty:focus~ .service-list label[for="radio-warranty"]::before,
+.radio-credit:focus ~ .service-list label[for="radio-credit"]::before {
      outline: 1px dotted rgb(0, 0, 0);
 }
 
-#radio-delivery:checked ~ .service-list label[for="radio-delivery"]::before,
-#radio-warranty:checked ~ .service-list label[for="radio-warranty"]::before,
-#radio-credit:checked ~ .service-list label[for="radio-credit"]::before {
+.radio-delivery:checked ~ .service-list label[for="radio-delivery"]::before,
+.radio-warranty:checked ~ .service-list label[for="radio-warranty"]::before,
+.radio-credit:checked ~ .service-list label[for="radio-credit"]::before {
     content: "";
     top: 0;
     left: 0;
@@ -953,19 +959,19 @@ main {
     background-color: rgb(0, 0, 0);
 }
 
-#radio-delivery:checked ~ .service-list label[for="radio-delivery"],
-#radio-warranty:checked ~ .service-list label[for="radio-warranty"],
-#radio-credit:checked ~ .service-list label[for="radio-credit"] {
+.radio-delivery:checked ~ .service-list label[for="radio-delivery"],
+.radio-warranty:checked ~ .service-list label[for="radio-warranty"],
+.radio-credit:checked ~ .service-list label[for="radio-credit"] {
     color: rgb(247, 225, 132);
 }
 
-#radio-credit:checked ~ .service-list label[for="radio-credit"] {
+.radio-credit:checked ~ .service-list label[for="radio-credit"] {
     padding-left: 32px;
 }
 
-#radio-delivery:checked ~ .service-description .delivery,
-#radio-warranty:checked ~ .service-description .warranty,
-#radio-credit:checked ~ .service-description .credit {
+.radio-delivery:checked ~ .service-description .delivery,
+.radio-warranty:checked ~ .service-description .warranty,
+.radio-credit:checked ~ .service-description .credit {
     display: block;
 }
 
@@ -1009,7 +1015,7 @@ main {
     margin: 0;
 }
 
-.credit p {
+.service-description p {
     padding-top: 3px;
     padding-left: 1px;
 }
@@ -1138,13 +1144,11 @@ main {
     color: rgb(0, 0, 0);
     
     list-style: none;
-    /*list-style-position: outside;*/
 }
 
 .transport-company {
     position: relative;
     padding-left: 20px;
-    
 }
 
 .transport-company::before {
@@ -1159,7 +1163,6 @@ main {
     
     border: 2px solid rgb(229, 229, 229);
     border-radius: 50%;
-    
 }
 
 .about-us .map {
@@ -1372,8 +1375,6 @@ input:invalid {
         
     cursor: pointer;
 }
-
-
 
                                             /* INNER PAGE */
                                            /* breadcrumbs */
@@ -1682,7 +1683,6 @@ h1 {
     background-color: rgb(0, 0, 0);
 }
                                         /* range, checkbox & radiobuttons */ 
-
 .range-controls {
     position: relative;
 }
@@ -1821,7 +1821,6 @@ h1 {
     cursor: pointer;
 }
 
-
                                    /* catalog with monopods */
 
 .catalog {
@@ -1925,7 +1924,6 @@ h1 {
 .catalog-hover .button {
     margin-top: 35px;
 }
-
 
 .add-compare {
     font-family: "OpenSans", "Arial",  sans-serif;
@@ -2239,7 +2237,7 @@ h1 {
     align-items: flex-end;
     flex-direction: column;
     
-    margin-right: -2px;
+    margin-right: -5px;
 }
 
 .contacts .phone-number {
